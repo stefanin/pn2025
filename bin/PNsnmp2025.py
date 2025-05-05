@@ -98,7 +98,7 @@ def SnmpHostName(ip,comunity):
         except:
              return None
 
-def SnmpCDP(ip,comunity, writeFile=True):
+def SnmpCDP(ip,comunity):
         '''
         20230206 CDP query ip= ipadress, comunity= snmp comunity, writeFile= create a XLSX file, default True
         '''
@@ -122,8 +122,7 @@ def SnmpCDP(ip,comunity, writeFile=True):
         cdpTable = pd.DataFrame()
         cdpTable = cdpTable.assign(cdpMaster=cdpMaster,cdpPeerName=cdpPeerName,cdpPeerIp=cdpPeerIp,
                                     cdpPeerPlatform=cdpPeerPlatform,cdpPeerPort=cdpPeerPort)
-        if writeFile:                            
-            cdpTable.to_excel(percorso_file+HostName+'.CDP.xlsx',index=False)
+
         return cdpTable
 
 

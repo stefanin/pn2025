@@ -19,8 +19,8 @@ Mlist = pd.DataFrame()
 for x in elecoDevices.values:
     if x[3] == 'x':
         print(x)
-        Mdevice = MacaddressList(x[1], AAA[0][0], AAA[0][1], AAA[0][2])
+        Mdevice = MacaddressList(x[1], AAA[x[2]][0], AAA[x[2]][1], AAA[x[2]][2])
         Mlist = pd.concat([Mlist, Mdevice], axis = 0)
 
 
-Mlist.to_excel(DBdir+'MacadressTable.xlsx', index=False)
+Mlist.to_excel(DBdir+'MacadressTable20250505.xlsx', index=False)
